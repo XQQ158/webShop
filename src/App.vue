@@ -1,32 +1,36 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+
+        <!-- 顶部导航组件 -->
+        <headertop></headertop>
+        
+        <!-- 导航条 -->
+        <headernav></headernav>
+
+        <!-- 主要区域容器 -->
+        <el-main>
+            <router-view></router-view>
+        </el-main>
+      <!-- 主要区域容器END -->
+       
+        <footerbottom></footerbottom>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import headertop from "./views/public/header.vue";
+import footerbottom from "./views/public/footer.vue";
+import headernav from "./views/public/headernav.vue";
+export default {
+  
+    components:{
+        headertop,
+        footerbottom,
+        headernav
     }
-  }
 }
+</script>
+
+<style lang="scss">
+
 </style>
